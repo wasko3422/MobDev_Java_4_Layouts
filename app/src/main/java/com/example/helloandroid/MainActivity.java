@@ -2,7 +2,9 @@ package com.example.helloandroid;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +13,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     TextView mainTextView;
     Button mainButton;
@@ -34,12 +36,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mainEditText = findViewById(R.id.main_edittext);
 
         mainListView = findViewById(R.id.main_listview);
-// Create an ArrayAdapter for the ListView
         mArrayAdapter = new ArrayAdapter(this,
                 android.R.layout.simple_list_item_1,
                 mNameList);
-// Set the ListView to use the ArrayAdapter
         mainListView.setAdapter(mArrayAdapter);
+
+        mainListView.setOnItemClickListener(this);
     }
 
     @Override
@@ -49,5 +51,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mNameList.add(mainEditText.getText().toString());
         mArrayAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Log.d("omg android", position + ": " + mNameList.get(position));
+        mainTextView.setText(mNameList.get(position).toString()
+                + " is learning Android development!");
     }
 }
