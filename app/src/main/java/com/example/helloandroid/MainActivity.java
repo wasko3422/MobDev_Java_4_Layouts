@@ -4,12 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView mainTextView;
     Button mainButton;
+    EditText mainEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +23,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mainButton = findViewById(R.id.main_button);
         mainButton.setOnClickListener(this);
+
+        mainEditText = (EditText) findViewById(R.id.main_edittext);
     }
 
     @Override
     public void onClick(View v) {
-        mainTextView.setText(getString(R.string.text_after_button));
+        mainTextView.setText(mainEditText.getText().toString()
+                + " is learning Android development!");
     }
 }
