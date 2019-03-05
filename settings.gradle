@@ -1,1 +1,1 @@
-include ':app', ':layoutland'
+include ':main_elements', ':layout_land'
