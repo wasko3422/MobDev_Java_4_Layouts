@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayAdapter mArrayAdapter;
     ArrayList mNameList = new ArrayList();
 
+    Button ok_btn, cnc_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mainListView.setAdapter(mArrayAdapter);
 
         mainListView.setOnItemClickListener(this);
+
+        ok_btn = findViewById(R.id.ok_btn);
+        cnc_btn = findViewById(R.id.cnc_btn);
+
+        View.OnClickListener oclBtn = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // по id определеяем кнопку, вызвавшую этот обработчик
+                switch (v.getId()) {
+                    case R.id.ok_btn:
+                        // кнопка ОК
+                        mainTextView.setText("Нажата кнопка ОК");
+                        break;
+                    case R.id.cnc_btn:
+                        // кнопка Cancel
+                        mainTextView.setText("Нажата кнопка Cancel");
+                        break;
+                }
+            }
+        };
+
+        ok_btn.setOnClickListener(oclBtn);
+        cnc_btn.setOnClickListener(oclBtn);
     }
 
     @Override
