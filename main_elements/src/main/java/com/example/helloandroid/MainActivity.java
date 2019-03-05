@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -56,10 +57,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case R.id.ok_btn:
                         // кнопка ОК
                         mainTextView.setText("Нажата кнопка ОК");
+                        Toast.makeText(getApplicationContext(), "Нажата кнопка ОК", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.cnc_btn:
                         // кнопка Cancel
                         mainTextView.setText("Нажата кнопка Cancel");
+                        Toast.makeText(getApplicationContext(), "Нажата кнопка Cancel", Toast.LENGTH_LONG).show();
                         break;
                 }
             }
