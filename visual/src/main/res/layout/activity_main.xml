@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/llTop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,26 +25,31 @@
             android:id="@+id/btnTop"
             android:layout_width="128dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_gravity="left"
+            android:layout_marginLeft="135dp"
+            android:layout_marginTop="80dp"
             android:text="@string/btnTopText"></Button>
 
         <Button
             android:id="@+id/btnTop2"
             android:layout_width="134dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="-40dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginRight="3dp"
             android:text="Button"></Button>
 
         <Button
             android:id="@+id/btnTop3"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="70dp"
             android:layout_gravity="right"
+            android:layout_marginRight="70dp"
             android:text="Button"></Button>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <AbsoluteLayout
         android:id="@+id/llBottom"
