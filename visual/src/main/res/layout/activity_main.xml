@@ -5,51 +5,49 @@
     android:layout_width="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <TableLayout
         android:id="@+id/llTop"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@color/llTopColor"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvTop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:text="@string/tvTopText"></TextView>
+        <TableRow>
+            <Button
+                android:id="@+id/btnTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="@string/btnTopText"></Button>
+        </TableRow>
 
-        <Button
-            android:id="@+id/btnTop"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_gravity="left"
-            android:layout_marginLeft="135dp"
-            android:layout_marginTop="80dp"
-            android:text="@string/btnTopText"></Button>
+        <TableRow
+            android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnTop2"
-            android:layout_width="134dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="120dp"
-            android:layout_marginRight="3dp"
-            android:text="Button"></Button>
+            <Button
+                android:id="@+id/btnTop2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="101dp"
+                android:text="Button2"></Button>
+        </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <Button
             android:id="@+id/btnTop3"
-            android:layout_width="125dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
             android:layout_gravity="right"
-            android:layout_marginRight="70dp"
             android:text="Button"></Button>
+        </TableRow>
 
-    </RelativeLayout>
+    </TableLayout>
 
     <AbsoluteLayout
         android:id="@+id/llBottom"
